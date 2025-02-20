@@ -52,8 +52,8 @@ func httpPost(url string, data []byte, headers map[string]string) (string, error
 
 // SendSMS 调用短信API
 func SendSMS(phone string, s *models.AlertStore) error {
-	key := "xxx"
-	secret := "xxx"
+	key := "xxxxxxxxxxxxxxxxxxx"
+	secret := "xxxxxxxxxxxxxxxxxxx"
 
 	timestamp := strconv.FormatInt(time.Now().UnixNano()/int64(time.Millisecond), 10)
 
@@ -72,7 +72,7 @@ func SendSMS(phone string, s *models.AlertStore) error {
 			dataToSig := key + "/api/sms/sendMsg" + timestamp + data
 			sig := getSign(dataToSig, secret)
 
-			url := "https://url/api/sms/sendMsg"
+			url := "https://domian.com/api/sms/sendMsg"
 			headers := map[string]string{
 				"Accept":          "application/json",
 				"Content-Type":    "application/json;charset=utf-8",
